@@ -1,0 +1,1 @@
+select d.id as date id from dates d inner join relation r on r.did = d.id inner join locations l on l.id = r.lid where d.id = value;

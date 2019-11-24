@@ -1,0 +1,43 @@
+*{
+	box-sizing: border-box;
+}
+
+.column {
+	width: 100%;
+}
+
+@media only screen and (min-width: 800px){
+	.column {
+		float: left;
+		width: 33.33%;
+		padding: 5px;
+	}
+}
+
+.outerContainer {
+	width: 100%;
+	content: "";
+	display: table;
+	clear: both;
+	text-align: center;
+}
+
+#dateName {
+	font-size: 5vw;
+}
+
+#datePrice {
+	font-size: 3vw;
+}
+
+#dateDescription{
+	font-size: 2vw;
+}
+
+#locationName{
+	font-size: 2vw;
+}
+
+#googleMap {
+
+}

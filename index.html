@@ -1,0 +1,34 @@
+<head>
+	<link rel="stylesheet" type="text/css" href="stylesheet.css">
+	<script src="script.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	<div class="outerContainer">
+		<div class="column">
+			<input type="checkbox" name="isFood" value="true">Include Food<br>
+			<input type="checkbox" name="isNotFood" value="true">Include Not Food<br>
+			<input type="checkbox" name="isOutside" value="true">Include Outside Dates<br>
+			<input type="checkbox" name="isNotOutside" value="true">Include Inside Dates<br>
+			<input type="number" name="minPrice" min="0" max="300" value="0">Enter Minimum Price<br>
+			<input type="number" name="maxPrice" min="0" max="300" value="300">Enter Maximum Price<br>
+			<input type="button" value="Get Random Date" onclick="getRandomDate()"><br>
+			<input type="button" value="Get Current Location" onclick="getLocation()"><br>
+			<input type="text" name="manualLocation">
+			<input type="button" value="Manual Location Submit" onlick="getManualLocation()"><br>
+		</div>
+		<div class="column">
+			<div id="dateName">DateName</div>
+			<div id="datePrice">DatePrice</div>
+			<div id="dateDescription">DateDescription</div>
+			<div id="locationName">LocationName</div>
+			<div id="googleMap">GoogleMap</div>
+		</div>
+		<div class="column">
+			<input type="button" value="Add Date" onclick="addDate()"><br>
+			<input type="button" value="Add Location" onclick="addLoc()"><br>
+			<input type="button" value="Link Date/Location" onclick="linkD2L()"><br>
+			<input type="button" value="Update Records" onclick="updateRecords()"><br>
+		</div>
+	</div>
+</body>
