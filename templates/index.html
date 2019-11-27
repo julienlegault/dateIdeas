@@ -1,0 +1,33 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="/static/stylesheet.css"/>
+	</head>
+	<body>
+		<div class="outerContainer">
+			<div class="column">
+			<form action="/" method="post">
+				<input type="checkbox" name="isFood" value="True">Include Food<br>
+				<input type="checkbox" name="isNotFood" value="True">Include Not Food<br>
+				<input type="checkbox" name="isOutside" value="True">Include Outside Dates<br>
+				<input type="checkbox" name="isNotOutside" value="True">Include Inside Dates<br>
+				<input type="number" name="minPrice" min="0" max="300" value="0">Enter Minimum Price<br>
+				<input type="number" name="maxPrice" min="0" max="300" value="300">Enter Maximum Price<br>
+				<input type="submit" value="Get Random Date"><br>
+			</form>
+			</div>
+			<div class="column">
+				<div id="dateName">{{DateName}}</div>
+				<div id="datePrice">{{DatePrice}}</div>
+				<div id="dateDescription">{{DateDescription}}</div>
+				<div id="locationName">{{LocationName}}</div>
+				<div id="googleMap"><img src="{{GoogleMap}}" /></div>
+			</div>
+			<div class="column">
+				<input type="button" value="Add Date" onclick="addDate()"><br>
+				<input type="button" value="Add Location" onclick="addLoc()"><br>
+				<input type="button" value="Link Date/Location" onclick="linkD2L()"><br>
+				<input type="button" value="Update Records" onclick="updateRecords()"><br>
+			</div>
+		</div>
+	</body>
+</html>
