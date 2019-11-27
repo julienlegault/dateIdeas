@@ -5,6 +5,7 @@
 	<body>
 		<div class="outerContainer">
 			<div class="column">
+			<!--<button onclick="getCurrentLocation()"></button>-->
 			<form action="/" method="post">
 				<input type="checkbox" name="isFood" value="True">Include Food<br>
 				<input type="checkbox" name="isNotFood" value="True">Include Not Food<br>
@@ -15,14 +16,15 @@
 				<input type="submit" value="Get Random Date"><br>
 			</form>
 			</div>
-			<div class="column">
+			<div class="column" style="visibility: {{ResultVisable}}">
+				<!--<div>{{currentPos}}</div>-->
 				<div id="dateName">{{DateName}}</div>
 				<div id="datePrice">{{DatePrice}}</div>
 				<div id="dateDescription">{{DateDescription}}</div>
 				<div id="locationName">{{LocationName}}</div>
 				<div id="googleMap"><img src="{{GoogleMap}}" /></div>
 			</div>
-			<div class="column">
+			<div class="column" style="visibility: hidden">
 				<input type="button" value="Add Date" onclick="addDate()"><br>
 				<input type="button" value="Add Location" onclick="addLoc()"><br>
 				<input type="button" value="Link Date/Location" onclick="linkD2L()"><br>

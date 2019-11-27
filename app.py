@@ -5,6 +5,8 @@ import random
 
 app = Flask(__name__)
 
+currentLoc = [0, 0]
+
 def getRandomLocation(dateId):
 	conn=sqlite3.connect('dateDatabase.db')
 	curs=conn.cursor()
@@ -28,7 +30,7 @@ def getMap(dateName, locArray):
 	result = mapString + marker + apiKey
 	return result
 
-def getRandomDate(isFood, isNotFood, isOutside, isNotOutside, minPrice, maxPrice):
+def getRandomDate(isFood, isNotFood, isOutside, isNotOutside, distance, minPrice, maxPrice):
 	conn=sqlite3.connect('dateDatabase.db')
 	curs=conn.cursor()
 	sql = "SELECT * FROM dates WHERE (price > " + str(minPrice) + " AND price < " + str(maxPrice) + ") "
@@ -51,6 +53,8 @@ def getRandomDate(isFood, isNotFood, isOutside, isNotOutside, minPrice, maxPrice
 @app.route('/')
 def index():
 	templateData = {
+		'ResultVisible' : 'hidden',
+		'currentPos' : currentLoc
 		
 	}
 	return render_template('index.html', **templateData)
@@ -63,10 +67,12 @@ def formSubmit():
 		isNotFood = request.form.get('isNotFood')
 		isOutside = request.form.get('isOutside')
 		isNotOutside = request.form.get('isNotOutside')
+		distance = request.form.get('distance')
 		minPrice = int(request.form.get('minPrice'))
 		maxPrice = int(request.form.get('maxPrice'))
-		date = getRandomDate(isFood, isNotFood, isOutside, isNotOutside, minPrice, maxPrice)
+		date = getRandomDate(isFood, isNotFood, isOutside, isNotOutside, distance, minPrice, maxPrice)
 	templateData = {
+		'ResultVisible' : 'visable',
 		'DateName' : date[1],
 		'DatePrice' : '$' + "{:12.2f}".format(date[2]),
 		'DateDescription' : 'Is food' if date[3] else 'Is not food',
@@ -74,6 +80,13 @@ def formSubmit():
 		'GoogleMap': getMap(date[1], getRandomLocation(date[0]))
 	}
 	return render_template('index.html', **templateData)
+
+@app.route('/api', methods=['POST'])
+def getLocation():
+	if request.method == 'POST':
+		lat = request.form.get('lat')
+		lon = request.form.get('lon')
+		currentLoc = [lat, lon]
 
 if __name__ == '__main__':
 	app.run(debug=True, host=IpConstants.TESTING, port=IpConstants.TESTING_PORT)
