@@ -1,10 +1,20 @@
 <html>
 	<head>
-		<link rel="stylesheet" href="/static/stylesheet.css"/>
+		<link rel="stylesheet" type="text/css" href="/static/stylesheet.css"/>
+		<style type="text/css">
+			#Form{
+				width: {{FormWidth}}% !important;
+			}
+			
+			#DateOut{
+				display: {{ResultVisable}} !important;
+				width: {{ResultWidth}}% !important;
+			}
+		</style>
 	</head>
 	<body>
 		<div class="outerContainer">
-			<div class="column" stlye="width: {{FormWidth}}%">
+			<div class="column" id="Form">
 			<!--<button onclick="getCurrentLocation()"></button>-->
 			<form action="/" method="post"> 
 				<input type="checkbox" name="isFood" value="True">Include Food<br>
@@ -16,7 +26,7 @@
 				<input type="submit" value="Get Random Date"><br>
 			</form>
 			</div>
-			<div class="column" style="visibility: {{ResultVisable}}; width: {{ResultWidth}}%">
+			<div class="column" id="DateOut">
 				<!--<div>{{currentPos}}</div>-->
 				<div id="dateName">{{DateName}}</div>
 				<div id="datePrice">{{DatePrice}}</div>
@@ -24,7 +34,7 @@
 				<div id="locationName">{{LocationName}}</div>
 				<div id="googleMap"><img src="{{GoogleMap}}" /></div>
 			</div>
-			<div class="column" style="visibility: hidden; width: 0%">
+			<div class="column" style="display: none; width: 0%">
 				<input type="button" value="Add Date" onclick="addDate()"><br>
 				<input type="button" value="Add Location" onclick="addLoc()"><br>
 				<input type="button" value="Link Date/Location" onclick="linkD2L()"><br>
