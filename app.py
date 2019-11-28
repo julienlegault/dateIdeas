@@ -1,3 +1,15 @@
+'''
+TODO
+make button larger
+remove 'enter'
+add color (minimal)
+create favicon
+link rest of dates
+add comments
+clean up code
+create powerpoint
+'''
+
 from flask import Flask, render_template, request
 from constants import IpConstants, MapsConstants
 import sqlite3
