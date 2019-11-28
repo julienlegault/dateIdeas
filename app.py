@@ -54,6 +54,8 @@ def getRandomDate(isFood, isNotFood, isOutside, isNotOutside, distance, minPrice
 def index():
 	templateData = {
 		'ResultVisible' : 'hidden',
+		'FormWidth' : 100,
+		'ResultWidth': 0,
 		'currentPos' : currentLoc
 		
 	}
@@ -73,6 +75,8 @@ def formSubmit():
 		date = getRandomDate(isFood, isNotFood, isOutside, isNotOutside, distance, minPrice, maxPrice)
 	templateData = {
 		'ResultVisible' : 'visable',
+		'FormWidth': 50,
+		'ResultWIdth': 50,
 		'DateName' : date[1],
 		'DatePrice' : '$' + "{:12.2f}".format(date[2]),
 		'DateDescription' : 'Is food' if date[3] else 'Is not food',
