@@ -3,27 +3,25 @@
 		<link rel="stylesheet" type="text/css" href="/static/stylesheet.css"/>
 		<link rel="icon" href="/static/favicon.ico" type="image/x-icon"/>
 		<style type="text/css">
-			#Form{
-				width: {{FormWidth}}% !important;
-			}
-			
 			#DateOut{
-				display: {{ResultVisable}} !important;
-				width: {{ResultWidth}}% !important;
+				visibility: {{ResultVisable}} !important;
 			}
 		</style>
 	</head>
 	<body>
 		<div class="outerContainer">
 			<div class="column" id="Form">
-			<!--<button onclick="getCurrentLocation()"></button>-->
-			<form action="/" method="post"> 
-				<input type="checkbox" name="isFood" value="True">Include Food<br>
-				<input type="checkbox" name="isNotFood" value="True">Include Not Food<br>
-				<input type="checkbox" name="isOutside" value="True">Include Outside Dates<br>
-				<input type="checkbox" name="isNotOutside" value="True">Include Inside Dates<br>
-				<input type="number" name="minPrice" min="0" max="300" value="0">Enter Minimum Price<br>
-				<input type="number" name="maxPrice" min="0" max="300" value="300">Enter Maximum Price<br>
+			<form action="/" method="post">
+				<div class="FoodBoxes">
+				<span><input type="checkbox" name="isFood" value="True"> Food</span>
+				<span><input type="checkbox" name="isNotFood" value="True"> Not Food</span>
+				</div>
+				<div class="OutsideBoxes">
+				<span><input type="checkbox" name="isOutside" value="True"> Outside Dates</span>
+				<span><input type="checkbox" name="isNotOutside" value="True"> Inside Dates</span>
+				</div>
+				<input type="number" name="minPrice" min="0" max="300" value="0">Minimum Price<br>
+				<input type="number" name="maxPrice" min="0" max="300" value="300">Maximum Price<br>
 				<input type="submit" value="Get Random Date"><br>
 			</form>
 			</div>

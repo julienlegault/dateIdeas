@@ -1,20 +1,44 @@
+html{
+	font-size: 25px;
+}
+
 *{
 	box-sizing: border-box;
 	margin: auto;
 }
 
 input[type=checkbox] {
-	zoom: 1.5;
-	padding: 2px;
+	zoom: 2;
+	padding: 5px;
 }
 
 input[type=number] {
-	padding: 2px;
+	zoom: 2;
+	padding: 5px;
+}
+
+input[type=submit] {
+	zoom: 2;
+}
+
+span {
+	display: inline;
+	width: 50%;
 }
 
 .column {
-	font-size: 2vw;
+	width: 100%;
+	display: block;
+	font-size: 1.5em;
 	padding: 5px;
+}
+
+@media only screen and (min-width: 768px) {
+	.column {
+		width: 50%;
+		display: inline-table;
+		font-size: 1.5em;
+	}
 }
 
 .outerContainer {
@@ -25,21 +49,10 @@ input[type=number] {
 }
 
 #dateName {
-	font-size: 5vw;
+	font-size: 3em;
 }
 
 #datePrice {
-	font-size: 3vw;
+	font-size: 1em;
 }
 
-#dateDescription{
-	font-size: 2vw;
-}
-
-#locationName{
-	font-size: 2vw;
-}
-
-#googleMap {
-
-}
