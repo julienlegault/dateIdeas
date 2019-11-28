@@ -93,4 +93,4 @@ def getLocation():
 		currentLoc = [lat, lon]
 
 if __name__ == '__main__':
-	app.run(debug=True, host=IpConstants.TESTING, port=IpConstants.TESTING_PORT)
+	app.run(debug=True, host=___IP___, port=___PORT___)
