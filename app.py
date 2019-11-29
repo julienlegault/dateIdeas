@@ -1,9 +1,6 @@
 '''
 TODO
-add color (minimal)
 link rest of dates
-add comments
-clean up code
 create powerpoint
 '''
 #Importing a few important tools:
