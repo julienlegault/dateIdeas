@@ -1,10 +1,12 @@
 html{
 	font-size: 25px;
+	background-color: #66CAD8;
 }
 
-*{
-	box-sizing: border-box;
-	margin: auto;
+
+h2{
+	padding: 2px;
+	color: #db8b00;
 }
 
 input[type=checkbox] {
@@ -18,7 +20,7 @@ input[type=number] {
 }
 
 input[type=submit] {
-	zoom: 2;
+	zoom: 3;
 }
 
 span {
@@ -27,13 +29,17 @@ span {
 }
 
 .column {
-	width: 100%;
+	width: 75%;
 	display: block;
 	font-size: 1.5em;
 	padding: 5px;
 }
 
 @media only screen and (min-width: 768px) {
+	*{
+		box-sizing: border-box;
+		margin: auto;
+	}
 	.column {
 		width: 50%;
 		display: inline-table;
